@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+// Find the trash bin closest to a house
 int findClosestBin(std::string bins, int index) {
     int rightDistance = -1.0, leftDistance = -1.0;
 
@@ -36,8 +37,9 @@ int findClosestBin(std::string bins, int index) {
         return leftDistance;
     }
 }
-/*
+
 int main() {
+    // First input is the number of test cases
     int numOfTests;
     std::cin >> numOfTests;
 
@@ -47,11 +49,13 @@ int main() {
 
     while (caseCount < numOfTests) {
         caseCount++;
+        // Next inputs are an integer for the number of houses and a string denoting houses with a trash bin as 1 and houses without as a 0
         std::cin >> numOfHouses >> bins;
 
         int distanceSum = 0;
 
         for (int i = 0; i < numOfHouses; i++) {
+            // Only find the closest bin for houses without a bin
             if (bins[i] == 48) {
                 distanceSum += findClosestBin(bins, i);
             }
@@ -60,4 +64,4 @@ int main() {
         std::cout << "Case #" << caseCount << ": " << distanceSum << std::endl;;
 
     }
-}*/
+}
